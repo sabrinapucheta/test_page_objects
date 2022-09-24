@@ -14,7 +14,7 @@ import pageObjets.DespegarResultadosPage;
 public class DespegarTestPageOb extends BaseTest {
 	WebDriver driver;
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void inicializar(ITestContext context) {
 		String nombreNavegador = context.getCurrentXmlTest().getParameter("navegador");
 		String navegador = nombreNavegador != null ? nombreNavegador : "CHROME";
@@ -27,7 +27,9 @@ public class DespegarTestPageOb extends BaseTest {
 		return new Object[] {"Córdoba, Córdoba, Argentina","Neuquén, Neuquén, Argentina","San Carlos de Bariloche, Rio Negro, Argentina"};
 		
 	}
-	@Test(dataProvider= "DataProviderDespegar", description = "Buscar alojamiento")
+	
+	
+	@Test(groups={"grupo1"},dataProvider= "DataProviderDespegar", description = "Buscar alojamiento")
 	public void BuscarAlojamiento(String destino) throws Exception {
 		DespegarAlojamientosPage despegarAlojamiento = new DespegarAlojamientosPage(driver);
 
@@ -37,7 +39,7 @@ public class DespegarTestPageOb extends BaseTest {
 
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void cerrar() {
 		driver.close();
 	}
