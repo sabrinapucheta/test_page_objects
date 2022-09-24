@@ -1,14 +1,13 @@
 package pageObjets;
 
-import java.time.Duration;
+
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseTest {
-	public static void goToMainPage (WebDriver driver) {
-		driver.get("https://www.despegar.com.ar/");
+	public static void goToMainPage (WebDriver driver,String url) {
+		driver.get(url);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 	}

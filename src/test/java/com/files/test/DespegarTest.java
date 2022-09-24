@@ -81,7 +81,7 @@ public class DespegarTest {
 
 		scroll.executeScript("window.scrollBy(0,250)", "");
 
-		WebElement validacion1 = driver.findElement(By.xpath("//span[contains(text(),'Savannah Cordoba Hotel')]"));
+		WebElement validacion1 = driver.findElement(By.xpath("/html/body/aloha-app-root/aloha-results/div/div/div[1]/div/div[2]/aloha-list-view-container/aloha-toolbar/div/div/div/label"));
 		System.out.println("Texto encontrado:  " + validacion1.getText());
 		Assert.assertTrue(validacion1.isDisplayed());
 		Thread.sleep(10000);

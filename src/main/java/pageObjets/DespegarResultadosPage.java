@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 
 public class DespegarResultadosPage {
-	@FindBy(xpath="//span[contains(text(),'Savannah Cordoba Hotel')]")
+	@FindBy(xpath="/html/body/aloha-app-root/aloha-results/div/div/div[1]/div/div[2]/aloha-list-view-container/aloha-toolbar/div/div/div/label")
 	WebElement validacion;
 	
 private WebDriver driver = null;
