@@ -80,7 +80,7 @@ public class DespegarAlojamientosPage {
 		scroll.executeScript("window.scrollBy(0,250)", "");
 	}
 
-	public void seleccionarEstadia() {
+	public void seleccionarEstadia(String destino) {
 	
 		esperarClickearWebElement(cerrarEmergente);
 		esperarClickearWebElement(alojamiento);
@@ -88,7 +88,7 @@ public class DespegarAlojamientosPage {
 		
 		
 		try {
-			elegirDestino.sendKeys("Córdoba, Córdoba, Argentina");
+			elegirDestino.sendKeys(destino);
 			Thread.sleep(5000);
 			elegirDestino.sendKeys(Keys.CONTROL);
 			Thread.sleep(5000);
@@ -112,6 +112,7 @@ public class DespegarAlojamientosPage {
 		//fechaEntrada.click();
 		
 		fechaSalida= driver.findElement(By.xpath("//*[@id='component-modals']/div[4]/div[1]/div[2]/div[1]/div[3]/div[" + (diaactual + 1) + "]"));
+		
 		esperarClickearWebElement(fechaSalida);
 		esperarClickearWebElement(cantidadAdultos);
 		esperarClickearWebElement(sumarAdultos);
